@@ -23,4 +23,8 @@ public class Consulta {
     public Prontuario getProntuario() {
         return prontuario;
     }
+
+    
+
+    
 }

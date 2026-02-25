@@ -1,17 +1,19 @@
 package Ecommerce;
 
 import java.util.Scanner;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
 
-        // Dados fixos para teste
+        //dados de teste
         Fornecedor fornecedor = new Fornecedor("Tech Distribuidora");
+        Fornecedor fornecedorM = new Fornecedor("Bruno eletronicos");
 
         Produto p1 = new Produto("Notebook", fornecedor);
-        Produto p2 = new Produto("Mouse Gamer", fornecedor);
+        Produto p2 = new Produto("Mouse Gamer", fornecedorM);
 
         Cliente cliente = new Cliente("Ana");
 
@@ -33,22 +35,29 @@ public class Main {
             opcao = sc.nextInt();
 
             switch (opcao) {
+
                 case 1:
-                    for (Pedido ped : cliente.getPedidos()) {
+                    List<Pedido> pedidos = cliente.getPedidos();
+                    for (int i = 0; i < pedidos.size(); i++) {
                         System.out.println("Nota Fiscal: " +
-                                ped.getNotaFiscal().getNumero());
+                                pedidos.get(i).getNotaFiscal().getNumero());
                     }
                     break;
 
                 case 2:
-                    for (Produto prod : pedido.getProdutos()) {
-                        System.out.println("Produto: " + prod.getNome());
+                    List<Produto> produtos = pedido.getProdutos();
+                    for (int i = 0; i < produtos.size(); i++) {
+                        System.out.println("Produto: " +
+                                produtos.get(i).getNome());
                     }
                     break;
 
                 case 3:
                     System.out.println("Fornecedor do Notebook: " +
                             p1.getFornecedor().getNome());
+                             System.out.println("Fornecedor do Mouse Gamer: " +
+                            p2.getFornecedor().getNome());
+                
                     break;
 
                 case 0:
@@ -60,5 +69,6 @@ public class Main {
 
         } while (opcao != 0);
 
+     
     }
 }

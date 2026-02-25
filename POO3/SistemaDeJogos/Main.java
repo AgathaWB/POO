@@ -1,6 +1,7 @@
 package SistemaDeJogos;
 
 import java.util.Scanner;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
@@ -38,21 +39,24 @@ public class Main {
             switch (opcao) {
 
                 case 1:
-                    for (Item item : heroi.getInventario().getItens()) {
-                        System.out.println(item.getNome());
+                    List<Item> itens = heroi.getInventario().getItens();
+                    for (int i = 0; i < itens.size(); i++) {
+                        System.out.println(itens.get(i).getNome());
                     }
                     break;
 
                 case 2:
-                    for (Personagem p : guilda.getMembros()) {
-                        System.out.println(p.getNome());
+                    List<Personagem> membros = guilda.getMembros();
+                    for (int i = 0; i < membros.size(); i++) {
+                        System.out.println(membros.get(i).getNome());
                     }
                     break;
 
                 case 3:
-                    for (Item item : heroi.getInventario().getItens()) {
-                        if (item.isEquipado()) {
-                            System.out.println(item.getNome());
+                    List<Item> itensEquipados = heroi.getInventario().getItens();
+                    for (int i = 0; i < itensEquipados.size(); i++) {
+                        if (itensEquipados.get(i).isEquipado()) {
+                            System.out.println(itensEquipados.get(i).getNome());
                         }
                     }
                     break;
@@ -60,12 +64,10 @@ public class Main {
                 case 0:
                     break;
 
-                default:
-                    System.out.println("Opção inválida!");
             }
 
         } while (opcao != 0);
 
-       
+        
     }
 }

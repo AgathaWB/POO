@@ -11,4 +11,9 @@ public class Prontuario {
     public String getDescricao() {
         return descricao;
     }
+
+    public Consulta get(int i) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'get'");
+    }
 }

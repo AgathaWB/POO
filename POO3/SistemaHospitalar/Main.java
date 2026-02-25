@@ -55,32 +55,46 @@ public class Main {
                     int m = Integer.parseInt(sc.nextLine());
 
                     System.out.print("Descrição do prontuário: ");
-                    String desc = sc.nextLine();
+                    String desc = sc.nextLine();//////////////
 
-                    Consulta consulta = new Consulta(
-                            medicos.get(m),
-                            pacientes.get(p),
-                            desc
-                    );
+                    Consulta consulta = new Consulta(medicos.get(m), pacientes.get(p), desc);
 
                     pacientes.get(p).adicionarConsulta(consulta);
                     break;
 
                 case 4:
+
+                    if (pacientes.isEmpty()) {
+                        System.out.println("Nenhum paciente cadastrado!");
+                        break;
+                    }
+
                     System.out.println("Escolha paciente:");
-                    for (int i = 0; i < pacientes.size(); i++)
+                    for (int i = 1; i < pacientes.size(); i++) {
                         System.out.println(i + " - " + pacientes.get(i).getNome());
+                    }
 
-                    int idx = Integer.parseInt(sc.nextLine());
+                    int indice = Integer.parseInt(sc.nextLine());
 
-                    pacientes.get(idx).getConsultas().forEach(c -> {
-                        System.out.println("Médico: " + c.getMedico().getNome());
-                        System.out.println("Prontuário: " + c.getProntuario().getDescricao());
-                        System.out.println("----");
-                    });
+                    List<Consulta> consultas = pacientes.get(indice).getConsultas();
+
+                    if (consultas.isEmpty()) {
+                        System.out.println("Esse paciente não possui consultas.");
+                    } else {
+                        for (int i = 0; i < consultas.size(); i++) {
+                            System.out.println("Médico: " + consultas.get(i).getMedico().getNome());
+                            System.out.println("Prontuário: " + consultas.get(i).getProntuario().getDescricao());
+                           
+                        }
+                    }
                     break;
             }
 
         } while (opcao != 0);
+        {
+
+        }
+
     }
 }
+// lista as consultas e os protuarios

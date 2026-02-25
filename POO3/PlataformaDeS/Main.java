@@ -45,7 +45,7 @@ public class Main {
                     int qtd = Integer.parseInt(sc.nextLine());
 
                     for (int i = 0; i < qtd; i++) {
-                        System.out.print("Ator " + (i+1) + ": ");
+                        System.out.print("Ator " + (i + 1) + ": ");
                         filme.adicionarAtor(new Pessoa(sc.nextLine()));
                     }
 
@@ -74,8 +74,9 @@ public class Main {
                     break;
 
                 case 4:
-                    usuario.getPerfis().forEach(perfil ->
-                            System.out.println(perfil.getNome()));
+                    for (int i = 0; i < usuario.getPerfis().size(); i++) {
+                        System.out.println(usuario.getPerfis().get(i).getNome());
+                    }
                     break;
 
                 case 5:
@@ -84,8 +85,11 @@ public class Main {
                         System.out.println(i + " - " + usuario.getPerfis().get(i).getNome());
                     }
                     int index = Integer.parseInt(sc.nextLine());
-                    usuario.getPerfis().get(index).getAssistidos()
-                            .forEach(c -> System.out.println(c.getTitulo()));
+
+                    List<Conteudo> assistidos = usuario.getPerfis().get(index).getAssistidos();
+                    for (int i = 0; i < assistidos.size(); i++) {
+                        System.out.println(assistidos.get(i).getTitulo());
+                    }
                     break;
 
                 case 6:
@@ -94,11 +98,18 @@ public class Main {
                         System.out.println(i + " - " + filmes.get(i).getTitulo());
                     }
                     int idx = Integer.parseInt(sc.nextLine());
-                    filmes.get(idx).getElenco()
-                            .forEach(a -> System.out.println(a.getNome()));
+
+                    List<Pessoa> elenco = filmes.get(idx).getElenco();
+                    for (int i = 0; i < elenco.size(); i++) {
+                        System.out.println(elenco.get(i).getNome());
+                    }
                     break;
             }
 
         } while (opcao != 0);
+
+        
     }
 }
+///ver perfis, filmes assistidos por um perfil, (nçao sei) elenco
+/// não necessario 
