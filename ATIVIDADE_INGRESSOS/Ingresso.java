@@ -1,3 +1,5 @@
+package ATIVIDADE_INGRESSOS;
+
 public abstract class Ingresso {
     protected int preco;
 

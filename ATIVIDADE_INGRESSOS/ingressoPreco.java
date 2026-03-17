@@ -1,3 +1,5 @@
+package ATIVIDADE_INGRESSOS;
+
 public class ingressoPreco extends Ingresso implements Imprimivelel {
 
     public ingressoPreco(int preco) {

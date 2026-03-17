@@ -1,3 +1,5 @@
+package ATIVIDADE_INGRESSOS;
+
 public class InCamaroteVip extends Ingresso implements Imprimivelel{
     private String localizacao;
     private int taxaVip;

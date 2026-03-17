@@ -1,3 +1,5 @@
+package ATIVIDADE_INGRESSOS;
+
 public class ICamaroteInferior extends Ingresso implements Imprimivelel{
     private String localizacao;
 

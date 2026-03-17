@@ -1,3 +1,5 @@
+package ATIVIDADE_INGRESSOS;
+
 public class IngressoVip extends Ingresso implements Imprimivelel {
     private int taxaVip;
 
