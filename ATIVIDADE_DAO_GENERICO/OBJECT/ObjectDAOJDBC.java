@@ -1,27 +1,26 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class ProdutoDAOJDBC implements ProdutoDAO {
+public class ObjectDAOJDBC implements ObjectDAO {
     
     @Override
-    public void inserir(Produto produto){
+    public void inserir(Object object){
         
     }
 
     @Override
-    public List<Produto> listar(){
-        
+    public List<Object> listar(){
+    
         return new ArrayList<>();
     }
 
     @Override
-    public Produto buscarPorId(int id){
-
+    public Object buscarPorId(int id){
         return null;
     }
 
     @Override
     public void remover(int id){
-        
+        return;
     }
 }

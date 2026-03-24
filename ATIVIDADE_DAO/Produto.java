@@ -1,5 +1,3 @@
-package ATIVIDADE_DAO;
-
 public class Produto{
     private int id;
     private String nome;
